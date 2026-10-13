@@ -1,0 +1,17 @@
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.app h1 {
+  color: #6750a4;
+  font-size: 36px;
+}
+
+.app section {
+  margin-top: 32px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+}

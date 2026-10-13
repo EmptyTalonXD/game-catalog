@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #202020;
+  background: #f3f0fa;
+}
+
+p {
+  line-height: 1.6;
+}
