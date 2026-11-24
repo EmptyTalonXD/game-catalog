@@ -117,3 +117,75 @@
     font-size: 28px;
   }
 }
+
+.storage-notice {
+  padding: 12px 16px;
+  border-left: 4px solid #6750a4;
+  border-radius: 8px;
+  background: #e9e2f5;
+  line-height: 1.6;
+}
+
+.game-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.game-form input,
+.game-form select,
+.game-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #8d819e;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.game-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.game-form input:focus-visible,
+.game-form select:focus-visible,
+.game-form textarea:focus-visible {
+  outline: 3px solid #6750a4;
+  outline-offset: 2px;
+}
+
+.game-form button {
+  margin: 8px 12px 0 0;
+  padding: 10px 16px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.form-error {
+  padding: 12px;
+  border: 1px solid #a32121;
+  border-radius: 8px;
+  color: #8c1717;
+  background: #fff0f0;
+}
+
+.game-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.game-filter select,
+.game-filter button {
+  max-width: 100%;
+  padding: 10px;
+  font: inherit;
+}
+
+.game-filter select:focus-visible,
+.game-filter button:focus-visible {
+  outline: 3px solid #6750a4;
+  outline-offset: 2px;
+}

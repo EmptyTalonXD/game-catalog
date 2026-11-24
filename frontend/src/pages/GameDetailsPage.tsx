@@ -1,6 +1,5 @@
-import { Link, useParams } from 'react-router'
-import { games } from '../data/games'
-import type { GameStatus } from '../types/game'
+import { Link, useNavigate, useParams } from 'react-router'
+import type { Game, GameStatus } from '../types/game'
 
 const statusLabels: Record<GameStatus, string> = {
   planned: 'В планах',
@@ -10,8 +9,17 @@ const statusLabels: Record<GameStatus, string> = {
   dropped: 'Брошена',
 }
 
-export function GameDetailsPage() {
+type GameDetailsPageProps = {
+  games: Game[]
+  onDelete: (id: string) => void
+}
+
+export function GameDetailsPage({
+  games,
+  onDelete,
+}: GameDetailsPageProps) {
   const { id } = useParams()
+  const navigate = useNavigate()
   const game = games.find((item) => item.id === id)
 
   if (!game) {
@@ -57,6 +65,24 @@ export function GameDetailsPage() {
         <dt>Заметка</dt>
         <dd>{game.note || 'Заметки пока нет.'}</dd>
       </dl>
+
+      <p>
+        <Link to={`/games/${game.id}/edit`}>Редактировать игру</Link>
+      </p>
+
+      <p>
+        <button
+          type="button"
+          onClick={() => {
+            if (window.confirm(`Удалить игру «${game.title}»?`)) {
+              onDelete(game.id)
+              navigate('/games', { replace: true })
+            }
+          }}
+        >
+          Удалить игру
+        </button>
+      </p>
 
       <Link to="/games">К списку игр</Link>
     </section>

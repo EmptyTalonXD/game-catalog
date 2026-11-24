@@ -17,3 +17,4 @@ export type Game = {
   note: string
 }
 
+export type GameDraft = Omit<Game, 'id'>
